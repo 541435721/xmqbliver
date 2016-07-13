@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>register</title>
+</head>
+<body>
+<form id="user_form" method="post" action="/webuser/register/"
+      enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ sign_up_form.as_p }}
+    <input type="submit" name="submit" value="Register"/>
+</form>
+
+</body>
+</html>
