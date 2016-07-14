@@ -2,15 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.428571429;
+            color: #333333;
+            background-color: #ffffff;
+            margin: 0;
+        }
+    </style>
     <title>login</title>
 </head>
 <body>
-<form role="form" class="LoginForm" action="/webuser/login/" method="post" role="form">
-    {% csrf_token %}
-    {% for field in form.visible_fields %}
-        {{ field }}
-    {% endfor %}
-    <input type="submit" name="submit" value="登录"/>
-</form>
+
+<div class="container">
+    <div class="jumbotron text-center">
+        <h1>登录页面</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <h3>第一列</h3>
+            <p>学的不仅是技术，更是梦想！</p>
+            <p>再牛逼的梦想,也抵不住你傻逼似的坚持！</p>
+        </div>
+        <div class="col-md-8">
+            <form role="form" class="LoginForm" action="/webuser/login/" method="post" role="form">
+                {% csrf_token %}
+                {% for field in form.visible_fields %}
+                    {{ field }}
+                {% endfor %}
+                <input type="submit" name="submit" value="登录"/>
+            </form>
+        </div>
+        <div class="col-md-2">
+            <h3>第三列</h3>
+            <p>学的不仅是技术，更是梦想！</p>
+            <p>再牛逼的梦想,也抵不住你傻逼似的坚持！</p>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
